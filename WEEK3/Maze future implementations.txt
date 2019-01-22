@@ -1,0 +1,47 @@
+Future Use Code
+
+// protected: bool isBarrier;
+// protected: bool visited;
+
+// future functionality
+bool UpdateCellHasBeenVisited() {
+	visited = true;
+}
+
+// UPDATE IN FUTURE
+public: Group() {
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			content[i][j] = '.';
+		}
+	}
+	isBarrier, visited, blocked, start, end = false;
+	cellLocX, cellLocY = 0;
+}
+
+
+// UPDATE IN FUTURE
+// overloaded constructor that accepts a char to add to cell ID (index 1,1)
+public:	Group(char brand) {
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			// if a wall, 'X' and flag, otherwise '.'
+			if (brand == 'X' || brand == 'x') { contArray[i][j] = 'X'; blocked = true; }
+			else { contArray[i][j] = '.'; }
+		}
+	}
+	// Set flags based on passed cellType
+	if (brand == 'S' || brand == 's') { contArray[1][1] = 'S'; start = true; }
+	else if (brand == 'F' || brand == 'f') { contArray[1][1] = 'F'; end = true; }
+
+
+	//isBarrier, 
+	//visited = false;
+	x_Location, y_Location = 0;
+}
+
+	//// Press a key
+	//cout << endl << "Press <Enter> to continue..." << endl;
+	//cin.get();

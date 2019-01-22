@@ -1,0 +1,99 @@
+#include 
+
+#define MAX 5
+
+class Stack {
+
+    int top;
+
+public:
+
+    int stkArray[MAX];
+
+    Stack() {
+
+        top = -1;
+
+    }
+
+    int pop();
+
+    int size();
+
+    bool push(int el);
+
+    bool isEmpty();
+
+};
+
+int Stack::pop() {
+
+    if (top < 0) {
+
+        std::cout << "Stack Underflow" << std::endl;
+
+        return 0;
+
+    }
+
+    else {
+
+        int el = stkArray[top--];
+
+        return el;
+
+    }
+
+}
+
+int Stack::size() {
+        return top + 1;
+}
+
+bool Stack::push(int el) {
+
+    if (top >= (MAX - 1)) {
+
+        std::cout << "Stack Overflow" << std::endl;
+
+        return false;
+
+    }
+
+    else {
+
+        stkArray[++top] = el;
+
+        std::cout << el << " was pushed onto the stack" << std::endl;
+
+    }
+
+}
+
+bool Stack::isEmpty() {
+
+    return (top < 0);
+
+}
+
+
+
+int main() {
+
+    struct Stack test;
+
+    for (int i = 0; i < MAX; i++) {
+
+        test.push(i);
+
+    }
+
+    std::cout << test.pop() << " was popped from the stack" << std::endl;
+
+    test.push(6);
+
+    std::cout << "Stack has " << test.size() << " elements loaded" << std::endl;
+
+    return 0;
+
+}
